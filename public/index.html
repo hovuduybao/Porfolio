@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio for Bao HO - IoT Project Manager & Embedded Systems Engineer with 4+ years experience in LoRaWAN, Smart Metering, and Smart City projects." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Manrope:wght@400;600&display=swap" rel="stylesheet" />
+  <title>Bao HO · Portfolio Chef de Projet IoT</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card: #111826;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #0055A4;
+      --accent-2: #FFFFFF;
+      --accent-3: #EF4135;
+      --accent-4: #0055A4;
+      --border: #1f2937;
+      --glow: rgba(0, 85, 164, 0.25);
+      --gradient-1: linear-gradient(135deg, #0055A4, #FFFFFF);
+      --gradient-2: linear-gradient(135deg, #FFFFFF, #EF4135);
+      --gradient-3: linear-gradient(135deg, #0055A4, #EF4135);
+    }
+    
+    [data-theme="light"] {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --accent: #0055A4;
+      --accent-2: #FFFFFF;
+      --accent-3: #EF4135;
+      --accent-4: #0055A4;
+      --border: #e2e8f0;
+      --glow: rgba(0, 85, 164, 0.15);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Space Grotesk', 'Manrope', sans-serif;
+      background: radial-gradient(circle at 20% 20%, rgba(0,85,164,0.15), transparent 30%),
+                  radial-gradient(circle at 80% 0%, rgba(255,255,255,0.08), transparent 28%),
+                  radial-gradient(circle at 50% 100%, rgba(239,65,53,0.12), transparent 40%),
+                  var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+      padding: 0 16px 48px;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    
+    .controls {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+      z-index: 1000;
+    }
+    
+    .control-btn {
+      padding: 10px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .control-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px var(--glow);
+      border-color: var(--accent);
+    }
+    
+    main { max-width: 1080px; margin: 0 auto; padding-top: 80px; }
+    header { 
+      display: grid; 
+      gap: 16px; 
+      padding: 24px; 
+      border: 2px solid var(--border); 
+      border-radius: 20px; 
+      background: var(--card); 
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-1);
+    }
+    
+    .eyebrow { 
+      letter-spacing: 0.08em; 
+      text-transform: uppercase; 
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: 12px; 
+      font-weight: 600;
+    }
+    h1 { margin: 4px 0 12px; font-size: 38px; line-height: 1.2; }
+    p { margin: 0; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 8px 0 4px; }
+    .pill { 
+      padding: 8px 14px; 
+      border-radius: 999px; 
+      border: 1px solid var(--border); 
+      color: var(--text); 
+      font-size: 13px; 
+      background: var(--gradient-1);
+      font-weight: 500;
+    }
+    .pill:nth-child(2) { background: var(--gradient-2); }
+    .pill:nth-child(3) { background: var(--gradient-3); }
+    .pill:nth-child(4) { background: linear-gradient(135deg, #06b6d4, #8b5cf6); }
+    
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
+    .btn { 
+      text-decoration: none; 
+      padding: 12px 16px; 
+      border-radius: 12px; 
+      font-weight: 600; 
+      border: 2px solid var(--border); 
+      color: var(--text); 
+      transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+      background: var(--card);
+    }
+    .btn.primary { 
+      background: var(--gradient-1);
+      color: #ffffff; 
+      border: none; 
+      box-shadow: 0 10px 40px var(--glow);
+    }
+    .btn:hover { 
+      transform: translateY(-2px); 
+      border-color: var(--accent); 
+      box-shadow: 0 10px 30px var(--glow); 
+    }
+    section { margin-top: 32px; }
+    h2 { 
+      font-size: 20px; 
+      margin: 0 0 12px; 
+      letter-spacing: 0.01em;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .card { 
+      padding: 18px; 
+      border: 2px solid var(--border); 
+      border-radius: 16px; 
+      background: var(--card);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gradient-1);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    
+    .card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      box-shadow: 0 15px 40px var(--glow);
+    }
+    
+    .card h3 { margin: 0 0 8px; font-size: 17px; }
+    .card p { color: var(--muted); font-size: 14px; }
+    .meta { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+    .tag { 
+      font-size: 12px; 
+      padding: 6px 10px; 
+      border-radius: 10px; 
+      background: var(--gradient-1);
+      border: 1px solid transparent;
+      color: #ffffff;
+      font-weight: 500;
+    }
+    .tag:nth-child(even) { background: var(--gradient-2); }
+    
+    .timeline { border-left: 2px solid var(--accent); padding-left: 16px; }
+    .timeline-item { margin-bottom: 16px; position: relative; }
+    .timeline-item::before { 
+      content: ''; 
+      position: absolute; 
+      left: -9px; 
+      top: 6px; 
+      width: 10px; 
+      height: 10px; 
+      border-radius: 50%; 
+      background: var(--gradient-1);
+      box-shadow: 0 0 0 6px var(--glow);
+    }
+    .timeline-item h3 { font-size: 16px; margin: 0 0 4px; }
+    .timeline-item .period { 
+      background: var(--gradient-2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: 13px; 
+      font-weight: 600; 
+    }
+    .timeline-item .company { color: var(--muted); font-size: 14px; font-style: italic; }
+    a.inline { 
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-decoration: none; 
+      font-weight: 600;
+    }
+    a.inline:hover { text-decoration: underline; }
+    footer { margin-top: 40px; text-align: center; color: var(--muted); font-size: 13px; }
+    ul { margin: 8px 0; padding-left: 20px; }
+    li { margin-bottom: 4px; color: var(--muted); font-size: 14px; }
+    
+    .lang-content { display: none; }
+    .lang-content.active { display: block; }
+    .lang-content.active.inline-element { display: inline; }
+    
+    @media (min-width: 900px) { 
+      h1 { font-size: 44px; } 
+      header { grid-template-columns: 2fr 1fr; align-items: center; } 
+    }
+    
+    @media (max-width: 600px) {
+      .controls {
+        top: 10px;
+        right: 10px;
+      }
+      .control-btn {
+        padding: 8px 12px;
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="controls">
+    <button class="control-btn" id="themeToggle">
+      <span id="themeIcon">🌙</span>
+      <span id="themeText" data-fr="Mode" data-en="Mode"></span>
+    </button>
+    <button class="control-btn" id="langToggle">
+      <span id="langIcon">🇬🇧</span>
+      <span id="langText">English</span>
+    </button>
+  </div>
+  
+  <main>
+    <header>
+      <div>
+        <div class="eyebrow">Portfolio · 2026</div>
+        <h1>HO Vu Duy Bao</h1>
+        
+        <!-- French -->
+        <p class="lang-content lang-fr active">Chef de Projet IoT avec 4+ ans d'expérience en LoRaWAN, Smart Metering et Systèmes Embarqués. Expert dans la connexion du matériel, firmware et cloud pour délivrer des solutions IoT scalables.</p>
+        <!-- English -->
+        <p class="lang-content lang-en">IoT Project Manager with 4+ years of experience in LoRaWAN, Smart Metering, and Embedded Systems. Expert in bridging hardware, firmware, and cloud to deliver scalable IoT solutions.</p>
+        
+        <div class="pill-row">
+          <span class="pill lang-content lang-fr active">Gestion de Projet IoT</span>
+          <span class="pill lang-content lang-en">IoT Project Management</span>
+          
+          <span class="pill lang-content lang-fr active">Expert LoRaWAN</span>
+          <span class="pill lang-content lang-en">LoRaWAN Expert</span>
+          
+          <span class="pill lang-content lang-fr active">Systèmes Embarqués</span>
+          <span class="pill lang-content lang-en">Embedded Systems</span>
+          
+          <span class="pill lang-content lang-fr active">Smart City</span>
+          <span class="pill lang-content lang-en">Smart City</span>
+        </div>
+        
+        <div class="actions">
+          <a class="btn primary" href="/cv.pdf" target="_blank" rel="noreferrer">
+            <span class="lang-content lang-fr active">Télécharger CV</span>
+            <span class="lang-content lang-en">Download CV</span>
+          </a>
+          <a class="btn" href="/presentation.pdf" target="_blank" rel="noreferrer">
+            <span class="lang-content lang-fr active">Voir Présentation</span>
+            <span class="lang-content lang-en">View Presentation</span>
+          </a>
+          <a class="btn" href="mailto:hovuduybao@gmail.com">
+            <span class="lang-content lang-fr active">Me Contacter</span>
+            <span class="lang-content lang-en">Contact Me</span>
+          </a>
+          <a class="btn" href="https://www.linkedin.com/in/hovuduybao" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3 class="lang-content lang-fr active">Aperçu Rapide</h3>
+        <h3 class="lang-content lang-en">Quick Overview</h3>
+        
+        <p style="margin-bottom:12px;" class="lang-content lang-fr active">4 ans en tant que Chef de Projet IoT, 1 an en tant qu'Ingénieur de Recherche. Certifié Scrum Master. Passionné par les technologies innovantes et l'IoT.</p>
+        <p style="margin-bottom:12px;" class="lang-content lang-en">4 years as IoT Project Manager, 1 year as Research Engineer. Scrum Master certified. Passionate about innovative technologies and IoT.</p>
+        
+        <div class="meta">
+          <span class="tag">📍 Rennes, France</span>
+          <span class="tag lang-content lang-fr active">🌍 Mobilité France</span>
+          <span class="tag lang-content lang-en">🌍 France Mobility</span>
+          <span class="tag lang-content lang-fr active">✅ Disponible Mars 2026</span>
+          <span class="tag lang-content lang-en">✅ Available March 2026</span>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <h2 class="lang-content lang-fr active">Projets Clés & Réalisations</h2>
+      <h2 class="lang-content lang-en">Key Projects & Achievements</h2>
+      
+      <div class="grid">
+        <div class="card">
+          <h3>LoKy - LoRa Linky (<span class="lang-content lang-fr active inline-element">Breveté</span><span class="lang-content lang-en inline-element">Patented</span>)</h3>
+          <p class="lang-content lang-fr active">Développement d'un capteur LoRaWAN breveté pour récupérer les informations des compteurs Linky et transmettre via réseau LoRa. Auto-alimenté depuis la sortie TIC du compteur.</p>
+          <p class="lang-content lang-en">Developed a patented LoRaWAN sensor to retrieve information from Linky smart meters and transmit via LoRa network. Self-powered from the meter's TIC output.</p>
+          <div class="meta">
+            <span class="tag lang-content lang-fr active">Brevet</span>
+            <span class="tag lang-content lang-en">Patent</span>
+            <span class="tag">LoRaWAN</span>
+            <span class="tag lang-content lang-fr active">Conception PCB</span>
+            <span class="tag lang-content lang-en">PCB Design</span>
+            <span class="tag">C/C++</span>
+            <span class="tag">KiCAD</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3 class="lang-content lang-fr active">Compteurs Intelligents Eau & Énergie</h3>
+          <h3 class="lang-content lang-en">Smart Water & Energy Meters</h3>
+          <p class="lang-content lang-fr active">Direction du développement et validation de compteurs intelligents pour SAUR (eau) et Socomec/GE Vernova (électricité). Gestion de bout en bout des spécifications au déploiement terrain.</p>
+          <p class="lang-content lang-en">Led development and validation of smart meters for SAUR (water) and Socomec/GE Vernova (electricity). Managed end-to-end delivery from specifications to field deployment.</p>
+          <div class="meta">
+            <span class="tag">LoRaWAN</span>
+            <span class="tag lang-content lang-fr active">Tests RF</span>
+            <span class="tag lang-content lang-en">RF Testing</span>
+            <span class="tag">Modbus</span>
+            <span class="tag lang-content lang-fr active">Gestion de Projet</span>
+            <span class="tag lang-content lang-en">Project Management</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3 class="lang-content lang-fr active">Projets Smart City & Metering</h3>
+          <h3 class="lang-content lang-en">Smart City & Metering Projects</h3>
+          <p class="lang-content lang-fr active">Remporté 3 appels d'offres publics en délivrant des propositions techniques. Direction de PoC jusqu'au déploiement pour infrastructure Smart City avec intégration multi-protocoles.</p>
+          <p class="lang-content lang-en">Won 3 public tenders by delivering technical proposals. Led PoC to deployment for Smart City infrastructure with multi-protocol integration.</p>
+          <div class="meta">
+            <span class="tag lang-content lang-fr active">Analyse CCTP</span>
+            <span class="tag lang-content lang-en">CCTP Analysis</span>
+            <span class="tag lang-content lang-fr active">Gestion PoC</span>
+            <span class="tag lang-content lang-en">PoC Management</span>
+            <span class="tag">AWS</span>
+            <span class="tag">DevOps</span>
+          </div>
+        </div>
+      </div>
+    </section>
+        <div class="card">
+          <h3>Smart Water & Energy Meters</h3>
+          <p>Led development and validation of smart meters for SAUR (water) and Socomec/GE Vernova (electricity). Managed end-to-end delivery from specifications to field deployment.</p>
+          <div class="meta">
+            <span class="tag">LoRaWAN</span>
+            <span class="tag">RF Testing</span>
+            <span class="tag">Modbus</span>
+            <span class="tag">Project Management</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Smart City & Metering Projects</h3>
+          <p>Won 3 public tenders by delivering technical proposals. Led PoC to deployment for Smart City infrastructure with multi-protocol integration.</p>
+          <div class="meta">
+            <span class="tag">CCTP Analysis</span>
+            <span class="tag">PoC Management</span>
+            <span class="tag">AWS</span>
+            <span class="tag">DevOps</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="lang-content lang-fr active">Expérience Professionnelle</h2>
+      <h2 class="lang-content lang-en">Professional Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3 class="lang-content lang-fr active">Chef de Projet IoT</h3>
+          <h3 class="lang-content lang-en">IoT Project Manager</h3>
+          <div class="company">Wi6labs · Rennes, France</div>
+          <div class="period">Janvier 2023 - <span class="lang-content lang-fr active inline-element">Présent</span><span class="lang-content lang-en inline-element">Present</span></div>
+          <p class="lang-content lang-fr active">Lien entre les équipes de développement embarqué/cloud et les clients finaux, garantissant l'interprétation et la mise en œuvre correctes des exigences.</p>
+          <p class="lang-content lang-en">Bridge between embedded/cloud development teams and end clients, ensuring requirements are correctly interpreted and implemented.</p>
+          <ul class="lang-content lang-fr active">
+            <li>Gestion de projets de compteurs intelligents pour SAUR et Socomec/GE Vernova</li>
+            <li>Rédaction de spécifications techniques pour capteurs, passerelles, firmware, configurations LoRaWAN et exigences RF</li>
+            <li>Recherche et benchmark fournisseurs : études de faisabilité, cycles industriels, estimation coûts et délais</li>
+            <li>Coordination fabricants, partenaires hardware/firmware et équipes internes</li>
+            <li>Tests RF (RSSI, SNR, sensibilité), autonomie, robustesse mécanique, tests terrain</li>
+            <li>Optimisation de la chaîne dev/prod de 25% (temps, ressources, contrôle qualité)</li>
+          </ul>
+          <ul class="lang-content lang-en">
+            <li>Managed smart meter projects for SAUR and Socomec/GE Vernova</li>
+            <li>Authored technical specifications for sensors, gateways, firmware, LoRaWAN configurations, and RF requirements</li>
+            <li>Conducted supplier research & benchmarking: feasibility studies, industrial cycles, cost & timeline estimation</li>
+            <li>Coordinated manufacturers, hardware/firmware partners, and internal teams</li>
+            <li>Performed RF testing (RSSI, SNR, sensitivity), autonomy, mechanical robustness, field testing</li>
+            <li>Optimized dev/prod pipeline by 25% (time, resources, quality control)</li>
+          </ul>
+          <div class="meta">
+            <span class="tag">JIRA/Trello</span>
+            <span class="tag">LoRaWAN Advanced</span>
+            <span class="tag">Modbus</span>
+            <span class="tag">BACnet</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <h3 class="lang-content lang-fr active">Chef de Projet IoT</h3>
+          <h3 class="lang-content lang-en">IoT Project Manager</h3>
+          <div class="company">Optimiz Network · Saint-Étienne, France</div>
+          <div class="period">Septembre 2021 - Décembre 2022</div>
+          <p class="lang-content lang-fr active">Responsable de la conception et mise en œuvre de projets Smart City et Smart Metering du PoC au déploiement.</p>
+          <p class="lang-content lang-en">Responsible for design and implementation of Smart City and Smart Metering projects from PoC to deployment.</p>
+          <ul class="lang-content lang-fr active">
+            <li>Analyse des spécifications techniques (CCTP) et besoins clients</li>
+            <li>Construction de réponses techniques : remporté 3 appels d'offres publics</li>
+            <li>Études de faisabilité basées sur solutions marché (connectivité, réseaux, stockage données, serveurs applicatifs)</li>
+            <li>Gestion du cycle complet de développement firmware, conception électronique/mécanique</li>
+            <li>Validation/qualification (tests RF, intégration)</li>
+          </ul>
+          <ul class="lang-content lang-en">
+            <li>Analyzed technical specifications (CCTP) and client needs</li>
+            <li>Built technical responses: won 3 public tenders</li>
+            <li>Conducted feasibility studies based on market solutions (connectivity, networks, data storage, application servers)</li>
+            <li>Managed full firmware development cycle, electronic/mechanical design</li>
+            <li>Performed validation/qualification (RF testing, integration)</li>
+          </ul>
+          <div class="meta">
+            <span class="tag">LoRa Certified</span>
+            <span class="tag">AWS</span>
+            <span class="tag">SaaS/On-Premise</span>
+            <span class="tag">Postman</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <h3 class="lang-content lang-fr active">Ingénieur de Recherche</h3>
+          <h3 class="lang-content lang-en">Research Engineer</h3>
+          <div class="company">CNRS · Grenoble, France</div>
+          <div class="period">Février 2021 - Août 2021</div>
+          <p class="lang-content lang-fr active">Développement de LoKy (LoRa Linky) - capteur LoRaWAN breveté pour compteurs Linky, financé par Enedis.</p>
+          <p class="lang-content lang-en">Developed LoKy (LoRa Linky) - a patented LoRaWAN sensor for Linky smart meters, funded by Enedis.</p>
+          <ul class="lang-content lang-fr active">
+            <li>Sélection du microcontrôleur, module RF et stack LoRaWAN</li>
+            <li>Analyse des signaux et consommation électrique du compteur Linky</li>
+            <li>Conception PCB avec supercondensateur et optocoupleur</li>
+            <li>Intégration système complet avec NodeRED, InfluxDB et Grafana</li>
+          </ul>
+          <ul class="lang-content lang-en">
+            <li>Selected microcontroller, RF module, and LoRaWAN stack</li>
+            <li>Analyzed Linky meter signals and power consumption</li>
+            <li>Designed PCB with super capacitor and optocoupler</li>
+            <li>Integrated complete system with NodeRED, InfluxDB, and Grafana</li>
+          </ul>
+          <div class="meta">
+            <span class="tag">C/C++/Arduino</span>
+            <span class="tag">KiCAD</span>
+            <span class="tag">MQTT</span>
+            <span class="tag">InfluxDB</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <h3 class="lang-content lang-fr active">Ingénieur de Recherche</h3>
+          <h3 class="lang-content lang-en">Research Engineer</h3>
+          <div class="company">G2Elab - Grenoble INP · Grenoble, France</div>
+          <div class="period">Janvier 2020 - Juillet 2020</div>
+          <p class="lang-content lang-fr active">Analyse comparative des technologies LPWAN (LoRa, Sigfox, Z-Wave) pour la surveillance de la consommation électrique urbaine.</p>
+          <p class="lang-content lang-en">Comparative analysis of LPWAN technologies (LoRa, Sigfox, Z-Wave) for urban electrical consumption monitoring.</p>
+          <ul class="lang-content lang-fr active">
+            <li>Conception d'un système complet de collecte de données</li>
+            <li>Développement d'un serveur applicatif avec flux base de données NoSQL</li>
+            <li>Création d'une interface de visualisation de consommation en temps réel</li>
+          </ul>
+          <ul class="lang-content lang-en">
+            <li>Designed complete data collection system</li>
+            <li>Developed application server with NoSQL database flow</li>
+            <li>Created real-time consumption visualization interface</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="lang-content lang-fr active">Compétences Techniques & Outils</h2>
+      <h2 class="lang-content lang-en">Technical Skills & Tools</h2>
+      <div class="grid">
+        <div class="card">
+          <h3 class="lang-content lang-fr active">Gestion de Projet</h3>
+          <h3 class="lang-content lang-en">Project Management</h3>
+          <ul class="lang-content lang-fr active">
+            <li>Méthodologie Agile/Scrum (certifié Scrum Master)</li>
+            <li>Analyse CCTP/appels d'offres & rédaction propositions techniques</li>
+            <li>Planification de projet & gestion des ressources</li>
+            <li>Résolution de problèmes avec mentalité « can-do »</li>
+          </ul>
+          <ul class="lang-content lang-en">
+            <li>Agile/Scrum methodology (Scrum Master certified)</li>
+            <li>CCTP/tender analysis & technical proposal writing</li>
+            <li>Project planning & resource management</li>
+            <li>Problem-solving with "can-do" mentality</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="lang-content lang-fr active">IoT & Connectivité</h3>
+          <h3 class="lang-content lang-en">IoT & Connectivity</h3>
+          <ul class="lang-content lang-fr active">
+            <li>Expert LoRaWAN (6 certifications de The Things Industries)</li>
+            <li>Protocoles industriels : Modbus, BACnet, OPC-UA</li>
+            <li>MQTT(S), HTTP(S), FTP</li>
+            <li>Sécurité & automatisation/test d'API</li>
+          </ul>
+          <ul class="lang-content lang-en">
+            <li>LoRaWAN Expert (6 certifications from The Things Industries)</li>
+            <li>Industrial protocols: Modbus, BACnet, OPC-UA</li>
+            <li>MQTT(S), HTTP(S), FTP</li>
+            <li>Security & API automation/testing</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="lang-content lang-fr active">Électronique & Embarqué</h3>
+          <h3 class="lang-content lang-en">Electronics & Embedded</h3>
+          <ul class="lang-content lang-fr active">
+            <li>Conception PCB & prototypage (KiCAD, AutoCAD)</li>
+            <li>Développement firmware (C++, Python)</li>
+            <li>Tests RF & qualification système</li>
+            <li>Développement de bancs de test</li>
+          </ul>
+          <ul class="lang-content lang-en">
+            <li>PCB design & prototyping (KiCAD, AutoCAD)</li>
+            <li>Firmware development (C++, Python)</li>
+            <li>RF testing & system qualification</li>
+            <li>Test fixture development</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="lang-content lang-fr active">Plateformes & DevOps</h3>
+          <h3 class="lang-content lang-en">Platforms & DevOps</h3>
+          <ul class="lang-content lang-fr active">
+            <li>Cloud : AWS, Node-RED, Grafana</li>
+            <li>Conteneurs : Docker, Kubernetes</li>
+            <li>Administration système Linux</li>
+            <li>Optimisation pipeline CI/CD</li>
+          </ul>
+          <ul class="lang-content lang-en">
+            <li>Cloud: AWS, Node-RED, Grafana</li>
+            <li>Containers: Docker, Kubernetes</li>
+            <li>Linux system administration</li>
+            <li>CI/CD pipeline optimization</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="lang-content lang-fr active">Formation & Certifications</h2>
+      <h2 class="lang-content lang-en">Education & Certifications</h2>
+      <div class="grid">
+        <div class="card">
+          <h3 class="lang-content lang-fr active">Diplômes de Master</h3>
+          <h3 class="lang-content lang-en">Master's Degrees</h3>
+          <ul class="lang-content lang-fr active">
+            <li><strong>M2 Électronique, Systèmes Embarqués & Télécoms</strong><br/>Université Savoie Mont Blanc (2021-2022)</li>
+            <li><strong>M2 System Control, Information Technology</strong><br/>Université Grenoble Alpes (2020-2021)</li>
+            <li><strong>Programme de Formation d'Ingénieurs d'Excellence (PFIEV)</strong><br/>Institut Polytechnique de Danang, Vietnam (2015-2020)<br/>Top 2/30 étudiants</li>
+          </ul>
+          <ul class="lang-content lang-en">
+            <li><strong>M2 Electronics, Embedded Systems & Telecoms</strong><br/>Université Savoie Mont Blanc (2021-2022)</li>
+            <li><strong>M2 System Control, Information Technology</strong><br/>Université Grenoble Alpes (2020-2021)</li>
+            <li><strong>Engineering Excellence Program (PFIEV)</strong><br/>Institut Polytechnique de Danang, Vietnam (2015-2020)<br/>Top 2/30 students</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Certifications</h3>
+          <ul class="lang-content lang-fr active">
+            <li><strong>Scrum Master</strong> - Scrum Inc. (2025)</li>
+            <li><strong>Brevet - LoKy</strong> (2021)<br/>Passerelle open-source pour Linky via LoRa/LoRaWAN</li>
+            <li><strong>Certification Complète LoRaWAN</strong> (2021)<br/>6 certificats de The Things Industries</li>
+            <li><strong>TOEIC 910</strong> - Anglais avancé (2022)</li>
+          </ul>
+          <ul class="lang-content lang-en">
+            <li><strong>Scrum Master</strong> - Scrum Inc. (2025)</li>
+            <li><strong>Patent - LoKy</strong> (2021)<br/>Open-source gateway for Linky via LoRa/LoRaWAN</li>
+            <li><strong>LoRaWAN Complete Certification</strong> (2021)<br/>6 certificates from The Things Industries</li>
+            <li><strong>TOEIC 910</strong> - Advanced English (2022)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="lang-content lang-fr active">Langues</h2>
+      <h2 class="lang-content lang-en">Languages</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>🇬🇧 <span class="lang-content lang-fr active inline-element">Anglais</span><span class="lang-content lang-en inline-element">English</span></h3>
+          <p class="lang-content lang-fr active">Courant (TOEIC 910)</p>
+          <p class="lang-content lang-en">Fluent (TOEIC 910)</p>
+        </div>
+        <div class="card">
+          <h3>🇫🇷 <span class="lang-content lang-fr active inline-element">Français</span><span class="lang-content lang-en inline-element">French</span></h3>
+          <p class="lang-content lang-fr active">Professionnel Complet</p>
+          <p class="lang-content lang-en">Professional Complete</p>
+        </div>
+        <div class="card">
+          <h3>🇻🇳 <span class="lang-content lang-fr active inline-element">Vietnamien</span><span class="lang-content lang-en inline-element">Vietnamese</span></h3>
+          <p class="lang-content lang-fr active">Langue Maternelle</p>
+          <p class="lang-content lang-en">Native Language</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="lang-content lang-fr active">Documents & Liens</h2>
+      <h2 class="lang-content lang-en">Documents & Links</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>📄 Curriculum Vitae</h3>
+          <p class="lang-content lang-fr active">CV professionnel complet de 5 pages avec expérience détaillée, compétences et réalisations.</p>
+          <p class="lang-content lang-en">Complete 5-page professional CV with detailed experience, skills, and achievements.</p>
+          <a class="inline lang-content lang-fr active" href="/cv.pdf" target="_blank" rel="noreferrer">Télécharger CV →</a>
+          <a class="inline lang-content lang-en" href="/cv.pdf" target="_blank" rel="noreferrer">Download CV →</a>
+        </div>
+        <div class="card">
+          <h3 class="lang-content lang-fr active">📊 Présentation Professionnelle</h3>
+          <h3 class="lang-content lang-en">📊 Professional Presentation</h3>
+          <p class="lang-content lang-fr active">Présentation complète présentant les projets et réalisations.</p>
+          <p class="lang-content lang-en">Comprehensive presentation deck showcasing projects and accomplishments.</p>
+          <a class="inline lang-content lang-fr active" href="/presentation.pdf" target="_blank" rel="noreferrer">Voir Présentation →</a>
+          <a class="inline lang-content lang-en" href="/presentation.pdf" target="_blank" rel="noreferrer">View Presentation →</a>
+        </div>
+        <div class="card">
+          <h3 class="lang-content lang-fr active">💼 Profil LinkedIn</h3>
+          <h3 class="lang-content lang-en">💼 LinkedIn Profile</h3>
+          <p class="lang-content lang-fr active">Connectez-vous avec moi sur LinkedIn pour du réseautage professionnel.</p>
+          <p class="lang-content lang-en">Connect with me on LinkedIn for professional networking.</p>
+          <a class="inline lang-content lang-fr active" href="https://www.linkedin.com/in/hovuduybao" target="_blank" rel="noreferrer">Visiter LinkedIn →</a>
+          <a class="inline lang-content lang-en" href="https://www.linkedin.com/in/hovuduybao" target="_blank" rel="noreferrer">Visit LinkedIn →</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>
+        📧 Contact: <a class="inline" href="mailto:hovuduybao@gmail.com">hovuduybao@gmail.com</a> · 
+        📱 Tel: +33 7 71 86 09 89
+      </div>
+      <div style="margin-top:6px;">
+        <span class="lang-content lang-fr active">Basé à Rennes, France · Disponible Mars 2026 · Hébergé sur Vercel avec Python</span>
+        <span class="lang-content lang-en">Based in Rennes, France · Available March 2026 · Hosted on Vercel with Python</span>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const html = document.documentElement;
+    
+    // Load saved theme or default to dark
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+    
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeIcon(newTheme);
+    });
+    
+    function updateThemeIcon(theme) {
+      themeIcon.textContent = theme === 'dark' ? '🌙' : '☀️';
+    }
+    
+    // Language Toggle
+    const langToggle = document.getElementById('langToggle');
+    const langIcon = document.getElementById('langIcon');
+    const langText = document.getElementById('langText');
+    
+    // Load saved language or default to French
+    const savedLang = localStorage.getItem('language') || 'fr';
+    setLanguage(savedLang);
+    
+    langToggle.addEventListener('click', () => {
+      const currentLang = localStorage.getItem('language') || 'fr';
+      const newLang = currentLang === 'fr' ? 'en' : 'fr';
+      setLanguage(newLang);
+      localStorage.setItem('language', newLang);
+    });
+    
+    function setLanguage(lang) {
+      // Update HTML lang attribute
+      document.documentElement.lang = lang;
+      
+      // Hide all language content
+      document.querySelectorAll('.lang-content').forEach(el => {
+        el.classList.remove('active');
+      });
+      
+      // Show selected language content
+      document.querySelectorAll(`.lang-${lang}`).forEach(el => {
+        el.classList.add('active');
+      });
+      
+      // Update language toggle button
+      if (lang === 'fr') {
+        langIcon.textContent = '🇬🇧';
+        langText.textContent = 'English';
+        document.title = 'Bao HO · Portfolio Chef de Projet IoT';
+      } else {
+        langIcon.textContent = '🇫🇷';
+        langText.textContent = 'Français';
+        document.title = 'Bao HO · IoT Project Manager Portfolio';
+      }
+    }
+  </script>
+</body>
+</html>
