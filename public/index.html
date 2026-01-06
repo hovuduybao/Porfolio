@@ -9,38 +9,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Manrope:wght@400;600&display=swap" rel="stylesheet" />
   <title>Bao HO · Portfolio Chef de Projet IoT</title>
   <style>
+    /* Light-first design: site is light-only now */
     :root {
-      --bg: #0d1117;
-      --card: #111826;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --accent: #0055A4;
-      --accent-2: #FFFFFF;
-      --accent-3: #EF4135;
-      --accent-4: #0055A4;
-      --border: #1f2937;
-      --glow: rgba(0, 85, 164, 0.25);
-      --gradient-1: linear-gradient(135deg, #0055A4, #FFFFFF);
-      --gradient-2: linear-gradient(135deg, #FFFFFF, #EF4135);
-      --gradient-3: linear-gradient(135deg, #0055A4, #EF4135);
-    }
-    
-    [data-theme="light"] {
       --bg: #f8fafc;
       --card: #ffffff;
-      --text: #1e293b;
-      --muted: #64748b;
+      --text: #0f1724; /* strong dark text on light */
+      --muted: #475569; /* readable muted on light */
       --accent: #0055A4;
       --accent-2: #FFFFFF;
       --accent-3: #EF4135;
       --accent-4: #0055A4;
       --border: #e2e8f0;
       --glow: rgba(0, 85, 164, 0.15);
+      --gradient-1: linear-gradient(135deg, #0070d1, #e6eef8);
+      --gradient-2: linear-gradient(135deg, #f8fafc, #ef6255);
+      --gradient-3: linear-gradient(135deg, #0070d1, #ef6255);
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: 'Space Grotesk', 'Manrope', sans-serif;
+      font-size: 16px;
       background: radial-gradient(circle at 20% 20%, rgba(0,85,164,0.15), transparent 30%),
                   radial-gradient(circle at 80% 0%, rgba(255,255,255,0.08), transparent 28%),
                   radial-gradient(circle at 50% 100%, rgba(239,65,53,0.12), transparent 40%),
@@ -110,8 +99,8 @@
       letter-spacing: 0.08em; 
       text-transform: uppercase; 
       background: var(--gradient-1);
+      color: var(--text);
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       background-clip: text;
       font-size: 12px; 
       font-weight: 600;
@@ -160,8 +149,8 @@
       margin: 0 0 12px; 
       letter-spacing: 0.01em;
       background: var(--gradient-1);
+      color: var(--text);
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       background-clip: text;
     }
     .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
@@ -227,9 +216,9 @@
     }
     .timeline-item h3 { font-size: 16px; margin: 0 0 4px; }
     .timeline-item .period { 
-      background: var(--gradient-2);
+      background: var(--gradient-1);
+      color: var(--text);
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       background-clip: text;
       font-size: 13px; 
       font-weight: 600; 
@@ -237,8 +226,8 @@
     .timeline-item .company { color: var(--muted); font-size: 14px; font-style: italic; }
     a.inline { 
       background: var(--gradient-1);
+      color: var(--text);
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       background-clip: text;
       text-decoration: none; 
       font-weight: 600;
@@ -256,6 +245,16 @@
       h1 { font-size: 44px; } 
       header { grid-template-columns: 2fr 1fr; align-items: center; } 
     }
+
+    /* Enable gradient text only where supported; otherwise use solid color for readability */
+    @supports (-webkit-text-fill-color: transparent) {
+      .eyebrow,
+      h2,
+      .timeline-item .period,
+      a.inline {
+        -webkit-text-fill-color: transparent;
+      }
+    }
     
     @media (max-width: 600px) {
       .controls {
@@ -271,10 +270,6 @@
 </head>
 <body>
   <div class="controls">
-    <button class="control-btn" id="themeToggle">
-      <span id="themeIcon">🌙</span>
-      <span id="themeText" data-fr="Mode" data-en="Mode"></span>
-    </button>
     <button class="control-btn" id="langToggle">
       <span id="langIcon">🇬🇧</span>
       <span id="langText">English</span>
@@ -657,25 +652,25 @@
       <h2 class="lang-content lang-en">Documents & Links</h2>
       <div class="grid">
         <div class="card">
-          <h3>📄 Curriculum Vitae</h3>
-          <p class="lang-content lang-fr active">CV professionnel complet de 5 pages avec expérience détaillée, compétences et réalisations.</p>
-          <p class="lang-content lang-en">Complete 5-page professional CV with detailed experience, skills, and achievements.</p>
+          <h3>Curriculum Vitae</h3>
+          <p class="lang-content lang-fr active">CV professionnel avec expérience détaillée, compétences et réalisations.</p>
+          <p class="lang-content lang-en">Professional CV with detailed experience, skills, and achievements.</p>
           <a class="inline lang-content lang-fr active" href="/cv.pdf" target="_blank" rel="noreferrer">Télécharger CV →</a>
           <a class="inline lang-content lang-en" href="/cv.pdf" target="_blank" rel="noreferrer">Download CV →</a>
         </div>
         <div class="card">
-          <h3 class="lang-content lang-fr active">📊 Présentation Professionnelle</h3>
-          <h3 class="lang-content lang-en">📊 Professional Presentation</h3>
+          <h3 class="lang-content lang-fr active">Présentation Professionnelle</h3>
+          <h3 class="lang-content lang-en">Professional Presentation</h3>
           <p class="lang-content lang-fr active">Présentation complète présentant les projets et réalisations.</p>
           <p class="lang-content lang-en">Comprehensive presentation deck showcasing projects and accomplishments.</p>
           <a class="inline lang-content lang-fr active" href="/presentation.pdf" target="_blank" rel="noreferrer">Voir Présentation →</a>
           <a class="inline lang-content lang-en" href="/presentation.pdf" target="_blank" rel="noreferrer">View Presentation →</a>
         </div>
         <div class="card">
-          <h3 class="lang-content lang-fr active">💼 Profil LinkedIn</h3>
-          <h3 class="lang-content lang-en">💼 LinkedIn Profile</h3>
-          <p class="lang-content lang-fr active">Connectez-vous avec moi sur LinkedIn pour du réseautage professionnel.</p>
-          <p class="lang-content lang-en">Connect with me on LinkedIn for professional networking.</p>
+          <h3 class="lang-content lang-fr active">Profil LinkedIn</h3>
+          <h3 class="lang-content lang-en">LinkedIn Profile</h3>
+          <p class="lang-content lang-fr active">Connectez-vous avec moi sur LinkedIn</p>
+          <p class="lang-content lang-en">Ping me on LinkedIn</p>
           <a class="inline lang-content lang-fr active" href="https://www.linkedin.com/in/hovuduybao" target="_blank" rel="noreferrer">Visiter LinkedIn →</a>
           <a class="inline lang-content lang-en" href="https://www.linkedin.com/in/hovuduybao" target="_blank" rel="noreferrer">Visit LinkedIn →</a>
         </div>
@@ -688,35 +683,13 @@
         📱 Tel: +33 7 71 86 09 89
       </div>
       <div style="margin-top:6px;">
-        <span class="lang-content lang-fr active">Basé à Rennes, France · Disponible Mars 2026 · Hébergé sur Vercel avec Python</span>
-        <span class="lang-content lang-en">Based in Rennes, France · Available March 2026 · Hosted on Vercel with Python</span>
+        <span class="lang-content lang-fr active">Basé à Rennes, France · Disponible Mars 2026 · </span>
+        <span class="lang-content lang-en">Based in Rennes, France · Available March 2026 </span>
       </div>
     </footer>
   </main>
 
   <script>
-    // Theme Toggle
-    const themeToggle = document.getElementById('themeToggle');
-    const themeIcon = document.getElementById('themeIcon');
-    const html = document.documentElement;
-    
-    // Load saved theme or default to dark
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    html.setAttribute('data-theme', savedTheme);
-    updateThemeIcon(savedTheme);
-    
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = html.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      updateThemeIcon(newTheme);
-    });
-    
-    function updateThemeIcon(theme) {
-      themeIcon.textContent = theme === 'dark' ? '🌙' : '☀️';
-    }
-    
     // Language Toggle
     const langToggle = document.getElementById('langToggle');
     const langIcon = document.getElementById('langIcon');
