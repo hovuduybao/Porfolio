@@ -34,6 +34,9 @@ class handler(BaseHTTPRequestHandler):
         if path == "/portfolio.pdf":
             serve_file(self, PUBLIC_DIR / "portfolio.pdf", "application/pdf")
             return
+        if path == "/profile-photo.png":
+            serve_file(self, PUBLIC_DIR / "profile-photo.png", "image/png")
+            return
 
         # Serve the main HTML page
         serve_file(self, PUBLIC_DIR / "index.html", "text/html; charset=utf-8")
