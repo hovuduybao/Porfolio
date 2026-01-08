@@ -31,8 +31,8 @@ class handler(BaseHTTPRequestHandler):
         if path == "/cv.pdf":
             serve_file(self, PUBLIC_DIR / "cv.pdf", "application/pdf")
             return
-        if path == "/presentation.pdf":
-            serve_file(self, PUBLIC_DIR / "presentation.pdf", "application/pdf")
+        if path == "/portfolio.pdf":
+            serve_file(self, PUBLIC_DIR / "portfolio.pdf", "application/pdf")
             return
 
         # Serve the main HTML page

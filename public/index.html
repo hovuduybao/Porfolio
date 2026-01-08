@@ -9,12 +9,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Manrope:wght@400;600&display=swap" rel="stylesheet" />
   <title>Bao HO · Portfolio Chef de Projet IoT</title>
   <style>
-    /* Light-first design: site is light-only now */
     :root {
       --bg: #f8fafc;
       --card: #ffffff;
-      --text: #0f1724; /* strong dark text on light */
-      --muted: #475569; /* readable muted on light */
+      --text: #0f1724; 
+      --muted: #475569; 
       --accent: #0055A4;
       --accent-2: #FFFFFF;
       --accent-3: #EF4135;
@@ -70,6 +69,34 @@
       transform: translateY(-2px);
       box-shadow: 0 6px 16px var(--glow);
       border-color: var(--accent);
+    }
+    
+    .profile-photo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid var(--accent);
+      object-fit: cover;
+      box-shadow: 0 10px 30px var(--glow);
+      margin-bottom: 16px;
+    }
+    
+    .header-intro {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+    }
+    
+    @media (max-width: 600px) {
+      .header-intro {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .profile-photo {
+        width: 120px;
+        height: 120px;
+      }
     }
     
     main { max-width: 1080px; margin: 0 auto; padding-top: 80px; }
@@ -279,13 +306,19 @@
   <main>
     <header>
       <div>
-        <div class="eyebrow">Portfolio · 2026</div>
-        <h1>HO Vu Duy Bao</h1>
+        <div class="header-intro">
+          <!-- Profile Photo: Replace src with your actual photo URL -->
+          <img src="https://media.licdn.com/dms/image/v2/D4E03AQEtOrkR39NStQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728916316959?e=1741219200&v=beta&t=Y9qXNI_vkkRD7F0ELsKkjJjG6oCMJLSC8Ft7hgkWMAc" alt="Photo de HO Vu Duy Bao" class="profile-photo" />
+          <div>
+            <div class="eyebrow">Portfolio · 2026</div>
+            <h1>HO Vu Duy Bao</h1>
+          </div>
+        </div>
         
         <!-- French -->
-        <p class="lang-content lang-fr active">Chef de Projet IoT avec 4+ ans d'expérience en LoRaWAN, Smart Metering et Systèmes Embarqués. Expert dans la connexion du matériel, firmware et cloud pour délivrer des solutions IoT scalables.</p>
+        <p class="lang-content lang-fr active">Chef de Projet IoT avec 3+ ans d'expérience en LoRaWAN, Smart Metering et Systèmes Embarqués. Passionné par l'IoT et les technologies innovantes. Autonome et organisé avec un esprit professionnel.</p>
         <!-- English -->
-        <p class="lang-content lang-en">IoT Project Manager with 4+ years of experience in LoRaWAN, Smart Metering, and Embedded Systems. Expert in bridging hardware, firmware, and cloud to deliver scalable IoT solutions.</p>
+        <p class="lang-content lang-en">IoT Project Manager with 3+ years of experience in LoRaWAN, Smart Metering, and Embedded Systems. Passionate about IoT and innovative technologies. Autonomous and organized with professional mindset.</p>
         
         <div class="pill-row">
           <span class="pill lang-content lang-fr active">Gestion de Projet IoT</span>
@@ -306,9 +339,9 @@
             <span class="lang-content lang-fr active">Télécharger CV</span>
             <span class="lang-content lang-en">Download CV</span>
           </a>
-          <a class="btn" href="/presentation.pdf" target="_blank" rel="noreferrer">
+          <a class="btn" href="/portfolio.pdf" target="_blank" rel="noreferrer">
             <span class="lang-content lang-fr active">Voir Présentation</span>
-            <span class="lang-content lang-en">View Presentation</span>
+            <span class="lang-content lang-en">View Portfolio</span>
           </a>
           <a class="btn" href="mailto:hovuduybao@gmail.com">
             <span class="lang-content lang-fr active">Me Contacter</span>
@@ -321,8 +354,8 @@
         <h3 class="lang-content lang-fr active">Aperçu Rapide</h3>
         <h3 class="lang-content lang-en">Quick Overview</h3>
         
-        <p style="margin-bottom:12px;" class="lang-content lang-fr active">4 ans en tant que Chef de Projet IoT, 1 an en tant qu'Ingénieur de Recherche. Certifié Scrum Master. Passionné par les technologies innovantes et l'IoT.</p>
-        <p style="margin-bottom:12px;" class="lang-content lang-en">4 years as IoT Project Manager, 1 year as Research Engineer. Scrum Master certified. Passionate about innovative technologies and IoT.</p>
+        <p style="margin-bottom:12px;" class="lang-content lang-fr active">3 ans en tant que Chef de Projet IoT, 1 an en tant qu'Ingénieur de Recherche. Certifié Scrum Master. Passionné par les technologies innovantes et l'IoT.</p>
+        <p style="margin-bottom:12px;" class="lang-content lang-en">3 years as IoT Project Manager, 1 year as Research Engineer. Scrum Master certified. Passionate about innovative technologies and IoT.</p>
         
         <div class="meta">
           <span class="tag">📍 Rennes, France</span>
@@ -377,28 +410,6 @@
             <span class="tag lang-content lang-en">CCTP Analysis</span>
             <span class="tag lang-content lang-fr active">Gestion PoC</span>
             <span class="tag lang-content lang-en">PoC Management</span>
-            <span class="tag">AWS</span>
-            <span class="tag">DevOps</span>
-          </div>
-        </div>
-      </div>
-    </section>
-        <div class="card">
-          <h3>Smart Water & Energy Meters</h3>
-          <p>Led development and validation of smart meters for SAUR (water) and Socomec/GE Vernova (electricity). Managed end-to-end delivery from specifications to field deployment.</p>
-          <div class="meta">
-            <span class="tag">LoRaWAN</span>
-            <span class="tag">RF Testing</span>
-            <span class="tag">Modbus</span>
-            <span class="tag">Project Management</span>
-          </div>
-        </div>
-        <div class="card">
-          <h3>Smart City & Metering Projects</h3>
-          <p>Won 3 public tenders by delivering technical proposals. Led PoC to deployment for Smart City infrastructure with multi-protocol integration.</p>
-          <div class="meta">
-            <span class="tag">CCTP Analysis</span>
-            <span class="tag">PoC Management</span>
             <span class="tag">AWS</span>
             <span class="tag">DevOps</span>
           </div>
@@ -515,6 +526,31 @@
             <li>Created real-time consumption visualization interface</li>
           </ul>
         </div>
+
+        <div class="timeline-item">
+          <h3 class="lang-content lang-fr active">Chef d'Équipe de Projet</h3>
+          <h3 class="lang-content lang-en">Project Team Leader</h3>
+          <div class="company">Institut Polytechnique de Danang · Vietnam</div>
+          <div class="period">Septembre 2019 - Décembre 2019</div>
+          <p class="lang-content lang-fr active">Projet universitaire international (France, Russie, Vietnam) sur les technologies LPWAN et IoT.</p>
+          <p class="lang-content lang-en">International university project (France, Russia, Vietnam) on LPWAN and IoT technologies.</p>
+          <ul class="lang-content lang-fr active">
+            <li>Connexion des capteurs UCA au réseau LoRaWAN pour collecter température, humidité, sons et luminosité</li>
+            <li>Analyse et traitement des données avec affichage sur Node-RED Dashboard</li>
+            <li>Vice-Champion au concours « Salon de la Technologie 2019 » (2ème sur 15 équipes)</li>
+          </ul>
+          <ul class="lang-content lang-en">
+            <li>Connected UCA sensors to LoRaWAN network to collect temperature, humidity, sound, and luminosity</li>
+            <li>Analyzed and processed data with Node-RED Dashboard display</li>
+            <li>Vice-Champion at "Technology Salon 2019" competition (2nd out of 15 teams)</li>
+          </ul>
+          <div class="meta">
+            <span class="tag">LoRaWAN</span>
+            <span class="tag">Node-RED</span>
+            <span class="tag">Raspberry Pi</span>
+            <span class="tag">C/Arduino</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -545,13 +581,15 @@
             <li>Expert LoRaWAN (6 certifications de The Things Industries)</li>
             <li>Protocoles industriels : Modbus, BACnet, OPC-UA</li>
             <li>MQTT(S), HTTP(S), FTP</li>
-            <li>Sécurité & automatisation/test d'API</li>
+            <li>Sécurité & automatisation/test d'API (Postman)</li>
+            <li>Backend & Dashboard design</li>
           </ul>
           <ul class="lang-content lang-en">
             <li>LoRaWAN Expert (6 certifications from The Things Industries)</li>
             <li>Industrial protocols: Modbus, BACnet, OPC-UA</li>
             <li>MQTT(S), HTTP(S), FTP</li>
-            <li>Security & API automation/testing</li>
+            <li>Security & API automation/testing (Postman)</li>
+            <li>Backend & Dashboard design</li>
           </ul>
         </div>
         <div class="card">
@@ -574,16 +612,18 @@
           <h3 class="lang-content lang-fr active">Plateformes & DevOps</h3>
           <h3 class="lang-content lang-en">Platforms & DevOps</h3>
           <ul class="lang-content lang-fr active">
-            <li>Cloud : AWS, Node-RED, Grafana</li>
+            <li>Cloud : AWS, Node-RED, Grafana, InfluxDB</li>
             <li>Conteneurs : Docker, Kubernetes</li>
-            <li>Administration système Linux</li>
-            <li>Optimisation pipeline CI/CD</li>
+            <li>Monitoring : Kibana, Elasticsearch, Logstash, Centreon</li>
+            <li>Administration système Linux/Raspbian</li>
+            <li>Outils : JIRA, Trello, Confluence, Dolibarr, Mantis</li>
           </ul>
           <ul class="lang-content lang-en">
-            <li>Cloud: AWS, Node-RED, Grafana</li>
+            <li>Cloud: AWS, Node-RED, Grafana, InfluxDB</li>
             <li>Containers: Docker, Kubernetes</li>
-            <li>Linux system administration</li>
-            <li>CI/CD pipeline optimization</li>
+            <li>Monitoring: Kibana, Elasticsearch, Logstash, Centreon</li>
+            <li>Linux/Raspbian system administration</li>
+            <li>Tools: JIRA, Trello, Confluence, Dolibarr, Mantis</li>
           </ul>
         </div>
       </div>
@@ -599,11 +639,13 @@
           <ul class="lang-content lang-fr active">
             <li><strong>M2 Électronique, Systèmes Embarqués & Télécoms</strong><br/>Université Savoie Mont Blanc (2021-2022)</li>
             <li><strong>M2 System Control, Information Technology</strong><br/>Université Grenoble Alpes (2020-2021)</li>
+            <li><strong>Génie Informatique Industrielle</strong><br/>ENSE3 - Grenoble INP (Jan-Juil 2020)<br/>Programme France-Vietnam</li>
             <li><strong>Programme de Formation d'Ingénieurs d'Excellence (PFIEV)</strong><br/>Institut Polytechnique de Danang, Vietnam (2015-2020)<br/>Top 2/30 étudiants</li>
           </ul>
           <ul class="lang-content lang-en">
             <li><strong>M2 Electronics, Embedded Systems & Telecoms</strong><br/>Université Savoie Mont Blanc (2021-2022)</li>
             <li><strong>M2 System Control, Information Technology</strong><br/>Université Grenoble Alpes (2020-2021)</li>
+            <li><strong>Industrial Computer Engineering</strong><br/>ENSE3 - Grenoble INP (Jan-Jul 2020)<br/>France-Vietnam Program</li>
             <li><strong>Engineering Excellence Program (PFIEV)</strong><br/>Institut Polytechnique de Danang, Vietnam (2015-2020)<br/>Top 2/30 students</li>
           </ul>
         </div>
@@ -648,6 +690,33 @@
     </section>
 
     <section>
+      <h2 class="lang-content lang-fr active">Conférences & Événements</h2>
+      <h2 class="lang-content lang-en">Conferences & Events</h2>
+      <div class="grid">
+        <div class="card">
+          <h3 class="lang-content lang-fr active">Participation & Organisation</h3>
+          <h3 class="lang-content lang-en">Participation & Organization</h3>
+          <ul class="lang-content lang-fr active">
+            <li><strong>2025</strong> - Rennes - Journée LPWAN : L'avenir des réseaux LPWAN (Participant)</li>
+            <li><strong>2022</strong> - St-Just Saint-Rambert - 24è CONGRÈS des Présidents de la Loire (Organisateur)</li>
+            <li><strong>2022</strong> - Amsterdam - The Things Conference (Bénévole)</li>
+            <li><strong>2021</strong> - Paris - IoT MtoM Embedded (Participant)</li>
+            <li><strong>2021</strong> - Online - The Things Conference (Participant)</li>
+            <li><strong>2020</strong> - Grenoble - Eclipse IoT Day Grenoble (Participant)</li>
+          </ul>
+          <ul class="lang-content lang-en">
+            <li><strong>2025</strong> - Rennes - LPWAN Day: The Future of LPWAN Networks (Participant)</li>
+            <li><strong>2022</strong> - St-Just Saint-Rambert - 24th Loire Presidents Congress (Organizer)</li>
+            <li><strong>2022</strong> - Amsterdam - The Things Conference (Volunteer)</li>
+            <li><strong>2021</strong> - Paris - IoT MtoM Embedded (Participant)</li>
+            <li><strong>2021</strong> - Online - The Things Conference (Participant)</li>
+            <li><strong>2020</strong> - Grenoble - Eclipse IoT Day Grenoble (Participant)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
       <h2 class="lang-content lang-fr active">Documents & Liens</h2>
       <h2 class="lang-content lang-en">Documents & Links</h2>
       <div class="grid">
@@ -660,11 +729,11 @@
         </div>
         <div class="card">
           <h3 class="lang-content lang-fr active">Présentation Professionnelle</h3>
-          <h3 class="lang-content lang-en">Professional Presentation</h3>
+          <h3 class="lang-content lang-en">Professional Portfolio</h3>
           <p class="lang-content lang-fr active">Présentation complète présentant les projets et réalisations.</p>
-          <p class="lang-content lang-en">Comprehensive presentation deck showcasing projects and accomplishments.</p>
-          <a class="inline lang-content lang-fr active" href="/presentation.pdf" target="_blank" rel="noreferrer">Voir Présentation →</a>
-          <a class="inline lang-content lang-en" href="/presentation.pdf" target="_blank" rel="noreferrer">View Presentation →</a>
+          <p class="lang-content lang-en">Portfolio showcasing projects and accomplishments.</p>
+          <a class="inline lang-content lang-fr active" href="/portfolio.pdf" target="_blank" rel="noreferrer">Voir Présentation →</a>
+          <a class="inline lang-content lang-en" href="/portfolio.pdf" target="_blank" rel="noreferrer">View Portfolio →</a>
         </div>
         <div class="card">
           <h3 class="lang-content lang-fr active">Profil LinkedIn</h3>
